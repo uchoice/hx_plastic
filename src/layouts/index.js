@@ -1,10 +1,15 @@
-import styles from './index.css';
+import './index.less';
+import Header from '../components/header';
+import Menu from '../components/menu';
+import Footer from '../components/footer';
 
 function BasicLayout(props) {
   return (
-    <div className={styles.normal}>
-      <h1 className={styles.title}>Yay! Welcome to umi!</h1>
+    <div className="app">
+      <Header/>
+      <Menu/>
       {props.children}
+      <Footer/>
     </div>
   );
 }
