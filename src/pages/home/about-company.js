@@ -10,7 +10,6 @@ export default class AboutCompany extends Component {
     controls: ''
   }
   clickVideo = () => {
-    console.log(this.videoRef);
     this.setState({
       controls: 'controls'
     }, () => {

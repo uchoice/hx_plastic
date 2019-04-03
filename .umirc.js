@@ -17,7 +17,12 @@ export default {
           path: '/',
           component: '../layouts',
           routes: [
+            { path: '/', redirect: '/home' },
             { path: '/home', component: '/home' },
+            { path: '/star-project', component: '/star-project' },
+            { path: '/join-us', component: '/join-us' },
+            { path: '/star-doctors', component: '/star-doctors' },
+            { path: '/contact-us', component: '/contact-us' },
           ]
         },
       ],
