@@ -11,11 +11,21 @@ export default function () {
       <h2 className="sub-title">About Store information</h2>
     </div>
     <div className="content">
-      <img alt="" src={SHOP_HONGKONG}/>
-      <img alt="" src={SHOP_CHENGDU}/>
-      <img alt="" src={SHOP_HAINAN}/>
-      <img alt="" src={SHOP_KOREA}/>
-      <img alt="" src={SHOP_TAIWAN}/>
+      <div className="pic-wrapper">
+        <img alt="" src={SHOP_HONGKONG}/>
+      </div>
+      <div className="pic-wrapper">
+        <img alt="" src={SHOP_CHENGDU}/>
+      </div>
+      <div className="pic-wrapper">
+        <img alt="" src={SHOP_HAINAN}/>
+      </div>
+      <div className="pic-wrapper">
+        <img alt="" src={SHOP_KOREA}/>
+      </div>
+      <div className="pic-wrapper">
+        <img alt="" src={SHOP_TAIWAN}/>
+      </div>
     </div>
   </div>
 }

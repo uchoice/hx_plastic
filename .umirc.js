@@ -19,6 +19,7 @@ export default {
           routes: [
             { path: '/', redirect: '/home' },
             { path: '/home', component: '/home' },
+            { path: '/cases', component: '/cases' },
             { path: '/star-project', component: '/star-project' },
             { path: '/join-us', component: '/join-us' },
             { path: '/star-doctors', component: '/star-doctors' },

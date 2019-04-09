@@ -3,6 +3,7 @@ import { Component } from 'react'
 import {
   Menu,
 } from 'antd';
+import Link from 'umi/link';
 
 export default class Nav extends Component {
   state = {
@@ -23,28 +24,28 @@ export default class Nav extends Component {
         mode="horizontal"
       >
         <Menu.Item key="home">
-          首页
+          <Link to="/home">首页</Link>
         </Menu.Item>
         <Menu.Item key="cases">
-          案例展示
+          <Link to="/cases">案例展示</Link>
         </Menu.Item>
         <Menu.Item key="star-project">
-          明星项目
+          <Link to="/star-project">明星项目</Link>
         </Menu.Item>
         <Menu.Item key="star-doctor">
-          明星医师
+          <Link to="/star-doctors">明星医师</Link>
         </Menu.Item>
         <Menu.Item key="xuanhua-team-member">
-          桦萱团队
+          <Link to="/star-doctors">桦萱团队</Link>
         </Menu.Item>
         <Menu.Item key="tech-train">
           技术培训
         </Menu.Item>
         <Menu.Item key="attract-investment">
-          招商加盟
+          <Link to="/join-us">招商加盟</Link>
         </Menu.Item>
         <Menu.Item key="contact-us">
-          联系我们
+          <Link to="/contact-us">联系我们</Link>
         </Menu.Item>
       </Menu>
     </div>

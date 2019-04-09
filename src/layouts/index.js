@@ -8,7 +8,7 @@ function BasicLayout(props) {
     <div className="app">
       <Header/>
       <Menu/>
-      {props.children}
+        {props.children}
       <Footer/>
     </div>
   );

@@ -2,6 +2,7 @@ import './index.less';
 import { Component  } from 'react';
 import Nav from '../../components/nav';
 import ClassicsProject from './classics-project';
+import StarGroup  from './star-group';
 import Environment from './environment';
 import AboutCompany from './about-company';
 import StoreInfo from './store-info';
@@ -27,6 +28,7 @@ export default class Home extends Component {
         <div className="content-wrapper">
           <ClassicsProject />
           <AboutCompany />
+          <StarGroup />
           <Environment infos={[
             {title:'会客场所', img: ENV_01},
             {title:'会客场所', img: ENV_02},

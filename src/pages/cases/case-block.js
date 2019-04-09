@@ -1,3 +1,4 @@
+import Link from 'umi/link'
 export default function ({icon,title, imgs}) {
   return <div className="case-block">
     <div className="title">
@@ -6,7 +7,9 @@ export default function ({icon,title, imgs}) {
     </div>
     <div className="cases-wrapper">
       {imgs.map((img, index) =>
-        <img key={`case_${index}`} alt="" src={img}/>
+        <Link to="/home">
+          <img key={`case_${index}`} alt="" src={img}/>
+        </Link>
       )}
     </div>
   </div>
