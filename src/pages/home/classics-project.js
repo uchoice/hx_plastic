@@ -2,14 +2,6 @@ import Link from 'umi/link'
 import BlockTitle from '../../components/block-title';
 import React, { Component } from 'react';
 
-/* const PROJECT_MBWD = require('../../assets/img/project_ycmb.png')
-const PROJECT_ZX = require('../../assets/img/project_zx.png')
-const PROJECT_PFBY = require('../../assets/img/project_pfby.png')
-const PROJECT_PFKS = require('../../assets/img/project_pfks.png')
-const PROJECT_KJMF = require('../../assets/img/project_kjmf.png')
-const PROJECT_HSDZ = require('../../assets/img/project_hsdz.png')
-const PROJECT_JKGL = require('../../assets/img/project_jkgl.png')
-const PROJECT_YCMB = require('../../assets/img/project_ycmb.png') */
 
 export default class ClassicsProject extends Component {
   constructor(props) {

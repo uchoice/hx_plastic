@@ -26,21 +26,32 @@ const DOCTOR_LIST = [
 
 export default class StarGroup extends Component {
   state = {
-    left: -1680,
+    left: -20 * 5,
     needTransition: true,
   }
   caculateDistance = (flag) => {
     const { left } = this.state;
     let caculateLeft = left;
-    caculateLeft = left + 280 * flag
-    if (left === -280 && flag ===  1) {
+    caculateLeft = left + 20 * flag
+    if (left === 0 && flag ===  1) {
       this.setState({
         left: caculateLeft
       }, () => {
         this.setState( ()=> {
           this.setState({
             needTransition: false,
-            left: -1400
+            left: -20 * 5
+          })
+        })
+      })
+    } else if (left === -200 && flag === -1) {
+      this.setState({
+        left: caculateLeft
+      }, () => {
+        this.setState( ()=> {
+          this.setState({
+            needTransition: false,
+            left: -20 * 5
           })
         })
       })
@@ -60,12 +71,12 @@ export default class StarGroup extends Component {
       </hgroup>
       <div className="doctors-wrapper">
         <span className="icon huaxuan huaxuaniconprevious" onClick={() => this.caculateDistance(1)}/>
-        <div className="shelter">
-          <ul style={{width:`${DOCTOR_LIST.length * 280}px`, left: `${left}px`,transition:needTransition ? 'all 1s ease' : ''}}>
-            {
-              DOCTOR_LIST.map((doctor, index) => <li key={`doctor-${index}`}><img alt="" src={doctor} /></li>)
-            }
-          </ul>
+          <div className="shelter">
+            <ul style={{transition:needTransition ? 'all 1s ease' : '', transform: `translate(${left}%)`}}>
+              {
+                DOCTOR_LIST.map((doctor, index) => <li key={`doctor-${index}`}><img alt="" src={doctor} /></li>)
+              }
+            </ul>
         </div>
         <span className="icon huaxuan huaxuaniconnext" onClick={() => this.caculateDistance(-1)}/>
       </div>

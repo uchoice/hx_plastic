@@ -1,6 +1,6 @@
 import './index.less';
 import { Component } from 'react';
-import CaseBlock from './case-block';
+import CaseBlock from '@/components/case-block';
 
 const PROJECT_MBWD = require('../../assets/img/project_ycmb.png')
 const PROJECT_ZX = require('../../assets/img/project_zx.png')

@@ -36,7 +36,7 @@ export default class Nav extends Component {
           <Link to="/star-doctors">明星医师</Link>
         </Menu.Item>
         <Menu.Item key="xuanhua-team-member">
-          <Link to="/star-doctors">桦萱团队</Link>
+          <Link to="/hx-team">桦萱团队</Link>
         </Menu.Item>
         <Menu.Item key="tech-train">
           技术培训
