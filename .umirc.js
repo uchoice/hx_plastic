@@ -1,6 +1,7 @@
 
 // ref: https://umijs.org/config/
 export default {
+  exportStatic: {},
   treeShaking: true,
   disableCSSModules: true,
   plugins: [
@@ -21,11 +22,16 @@ export default {
         { path: '/', redirect: '/home' },
         { path: '/home', component: './home' },
         { path: '/cases', component: './cases' },
-        { path: '/star-project', component: './star-project' },
+        {
+          path: '/star-project',
+          component: './star-project',
+        },
         { path: '/join-us', component: './join-us' },
         { path: '/star-doctors', component: './star-doctors' },
         { path: '/contact-us', component: './contact-us' },
-        { path: '/hx-team', component: './hx-team' }
+        { path: '/hx-team', component: './hx-team' },
+        { path: '/tech-training', component: './tech-training' },
+        { path: '/project-info', component: './project-info' },
       ]
     },
   ],

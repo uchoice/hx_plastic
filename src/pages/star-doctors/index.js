@@ -1,47 +1,41 @@
 import './index.less'
+import { Component } from 'react';
+import { request } from '@/utils';
 
-const DOCTOR_01 = require('../../assets/img/doctor_01.png');
-const DOCTOR_02 = require('../../assets/img/doctor_02.png');
-const DOCTOR_03 = require('../../assets/img/doctor_03.png');
-const DOCTOR_04 = require('../../assets/img/doctor_04.png');
+export default class StarDoctor extends Component {
+  state = {
+    starDoctorsArr: []
+  }
+  group = (array, subGroupLength) => {
+    let index = 0;
+    let newArray = [];
+    while (index < array.length) {
+      newArray.push(array.slice(index, index += subGroupLength));
+    }
+    return newArray;
+  }
+  getStarProject = () => {
+    request('/list?module=beautyStarDoctor&page=1&pageSize=40').then(res => {
+      this.setState({
+        starDoctorsArr: this.group(res, 4),
+      })
+    })
+  }
+  componentDidMount() {
+    this.getStarProject();
+  }
+  render() {
+    const { starDoctorsArr } = this.state;
+    return <div className="star-doctor">
+      {starDoctorsArr.map((array, index) =>
+        <div key={index} className="doctors">
+          {array.map(item => <div className="doctor-info">
+            <img key={item.id} alt="" src={item.image} />
+            {item.title}
+          </div>)}
+        </div>
+      )}
 
-export default function () {
-  return <div className="star-doctor">
-    <div className="doctors">
-      <div className="doctor-info">
-        <img alt="" src={DOCTOR_01} />
-        工藤新一
-      </div>
-      <div className="doctor-info">
-        <img alt="" src={DOCTOR_02} />
-        工藤新一
-      </div>
-      <div className="doctor-info">
-        <img alt="" src={DOCTOR_03} />
-        工藤新一
-      </div>
-      <div className="doctor-info">
-        <img alt="" src={DOCTOR_04} />
-        工藤新一
-      </div>
     </div>
-    <div className="doctors">
-      <div className="doctor-info">
-        <img alt="" src={DOCTOR_01} />
-        工藤新一
-    </div>
-      <div className="doctor-info">
-        <img alt="" src={DOCTOR_02} />
-        工藤新一
-    </div>
-      <div className="doctor-info">
-        <img alt="" src={DOCTOR_03} />
-        工藤新一
-    </div>
-      <div className="doctor-info">
-        <img alt="" src={DOCTOR_04} />
-        工藤新一
-    </div>
-    </div>
-  </div>
+  }
 }

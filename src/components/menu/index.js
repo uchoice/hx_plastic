@@ -39,7 +39,7 @@ export default class Nav extends Component {
           <Link to="/hx-team">桦萱团队</Link>
         </Menu.Item>
         <Menu.Item key="tech-train">
-          技术培训
+          <Link to="/tech-training">技术培训</Link>
         </Menu.Item>
         <Menu.Item key="attract-investment">
           <Link to="/join-us">招商加盟</Link>

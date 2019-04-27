@@ -1,5 +1,7 @@
 import 'whatwg-fetch'
-import { stringify } from 'qs';
+
+/* const originPath = 'http://www.66tongtu.com/view/artical'; */
+const originPath = '';
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -20,10 +22,10 @@ function parseJSON(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 export function request(url, option) {
-  fetch(url, option)
+  return fetch(originPath + url, option)
   .then(checkStatus)
   .then(parseJSON)
   .then(function(data) {
-    return data;
+    return data.data;
   })
 }

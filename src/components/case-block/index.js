@@ -1,16 +1,13 @@
-import Link from 'umi/link'
 import './index.less'
-export default function ({icon,title, imgs}) {
+export default function ({icon,title, cases}) {
   return <div className="case-block">
     {title && <div className="title">
       <img alt="" src={icon}/>
       {title}
     </div>}
     <div className="cases-wrapper">
-      {imgs.map((img, index) =>
-        <Link to="/home">
-          <img key={`case_${index}`} alt="" src={img}/>
-        </Link>
+      {cases.map((caseItem, index) =>
+        <img key={`case_${index}`} alt="" src={caseItem.image}/>
       )}
     </div>
   </div>

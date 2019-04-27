@@ -7,7 +7,7 @@ export default function ({infos}) {
           <div
             className="item"
             key={`env_${key}`}
-            style={{backgroundImage:`url(${info.img})`}}
+            style={{backgroundImage:`url("${info.image}")`}}
           >
             <div className="cover">{info.title}</div>
           </div>

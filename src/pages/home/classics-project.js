@@ -28,73 +28,20 @@ export default class ClassicsProject extends Component {
     this.fixed()
   }
   render() {
+    const {projects} = this.props;
     return <div ref={this.classicsProject} className="classics-project">
       <BlockTitle title="经典项目" subTitle="Classic project" />
       <ul className="projects">
-        <li className="item">
-          <Link to="/">
+      {
+        projects.map(project => <li key={project.id} className="item">
+          <Link to={`/project-info?id=${project.id}`}>
             <div className="content">
-              <span className="icon huaxuan huaxuaniconplastic"></span>
-              <span className="desc">面部微雕</span>
+              <img className="project-icon" alt="" src={project.icon} />
+              <span className="desc">{project.title}</span>
             </div>
           </Link>
-        </li>
-        <li className="item">
-          <Link to="/">
-            <div className="content">
-              <span className="icon huaxuan huaxuaniconplastic_push"></span>
-              <span className="desc">整形手术</span>
-            </div>
-          </Link>
-        </li>
-        <li className="item">
-          <Link to="/">
-            <div className="content">
-              <span className="icon huaxuan huaxuaniconsmile"></span>
-              <span className="desc">皮肤保养</span>
-            </div>
-          </Link>
-        </li>
-        <li className="item">
-          <Link to="/">
-            <div className="content">
-              <span className="icon huaxuan huaxuaniconwrinkle"></span>
-              <span className="desc">皮肤抗衰</span>
-            </div>
-          </Link>
-        </li>
-        <li className="item">
-          <Link to="/">
-            <div className="content">
-              <span className="icon huaxuan huaxuaniconaid_packet"></span>
-              <span className="desc">科技美肤</span>
-            </div>
-          </Link>
-        </li>
-        <li className="item">
-          <Link to="/">
-            <div className="content">
-              <span className="icon huaxuan huaxuaniconbeauty"></span>
-              <span className="desc">韩式定妆</span>
-            </div>
-          </Link>
-        </li>
-        <li className="item">
-          <Link to="/">
-            <div className="content">
-              <span className="icon huaxuan huaxuanicondoctor"></span>
-              <span className="desc">健康管理</span>
-            </div>
-          </Link>
-        </li>
-        <li className="item">
-          <Link to="/">
-            <div className="content">
-              <span className="icon huaxuan huaxuaniconteeth"></span>
-              <span className="desc">牙齿美容</span>
-            </div>
-          </Link>
-        </li>
+        </li>)
+      }
       </ul>
     </div>
   }
