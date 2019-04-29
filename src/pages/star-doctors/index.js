@@ -28,7 +28,7 @@ export default class StarDoctor extends Component {
     const { starDoctorsArr } = this.state;
     return <div className="star-doctor">
       {starDoctorsArr.map((array, index) =>
-        <div key={index} className="doctors">
+        <div key={'wraper' + index} className="doctors">
           {array.map(item => <div className="doctor-info">
             <img key={item.id} alt="" src={item.image} />
             {item.title}

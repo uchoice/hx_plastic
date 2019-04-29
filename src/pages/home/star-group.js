@@ -8,7 +8,7 @@ export default class StarGroup extends Component {
     starDoctors: []
   }
   init = () => {
-    request('/view/artical/list/module/beautyStarDoctor').then(res => {
+    request('/list?module=beautyStarDoctor&page=1&pageSize=120').then(res => {
       const doctors = res ? res.map(item => item.image) : []
       const starDoctors = doctors.concat(doctors).concat(doctors);
     this.setState({
