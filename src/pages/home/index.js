@@ -15,7 +15,7 @@ export default class Home extends Component {
     environments: [],
   }
   getCaourselImage = () => {
-    request('/view/artical/list/module/beautyCarouselImage').then(res => {
+    request('/list?module=beautyCarouselImage&page=1&pageSize=20').then(res => {
       const navImages = res ? res.map(item => item.image) : []
       this.setState({navImages})
     })

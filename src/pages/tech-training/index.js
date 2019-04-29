@@ -8,7 +8,7 @@ export default class TechTrainings extends Component {
     TechTrainings: [],
   }
   getHxTeamPics = () => {
-    request('/view/artical/list/module/beautyTechPx').then(res => {
+    request('/list?module=beautyTechPx&page=1&pageSize=100').then(res => {
       this.setState({
         TechTrainings: res,
       })
