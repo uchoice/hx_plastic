@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "umi dev",
+    "start": "cross-env PORT=8001 umi dev",
     "build": "umi build",
     "test": "umi test",
     "lint": "eslint --ext .js src mock tests",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "eslint": "^5.4.0",
+    "cross-env": "^5.1.1",
     "eslint-config-umi": "^1.4.0",
     "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-import": "^2.14.0",

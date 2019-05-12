@@ -17,9 +17,8 @@ export default class HxTeam extends Component{
   }
   getHxTeamPics = () => {
     request('/list?module=beautyhxTeam&page=1&pageSize=40').then(res => {
-      const refactorHxTeams = res.map(item => item.image);
       this.setState({
-        hxTeamArr: this.group(refactorHxTeams, 2),
+        hxTeamArr: this.group(res, 2),
       })
     })
   }
@@ -30,8 +29,8 @@ export default class HxTeam extends Component{
     const { hxTeamArr } = this.state;
     return <div className="team">
       {hxTeamArr.map((arr, index) =><CaseBlock
-          key={arr}
-          imgs= {
+          key={index}
+          cases= {
             [...arr]
           }
         />

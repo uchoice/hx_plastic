@@ -1,7 +1,7 @@
 import 'whatwg-fetch'
 
 /* const originPath = 'http://www.66tongtu.com/api/artical'; */
-const originPath = 'http://192.168.0.104:8080/api/artical';
+const originPath = 'http://47.98.133.159/api/artical';
 /* const originPath = ''; */
 
 function checkStatus(response) {

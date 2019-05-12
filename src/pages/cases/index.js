@@ -11,13 +11,11 @@ export default class Cases extends Component {
   }
   init = () => {
     request('/list?module=befautyClassicProject&page=1&pageSize=20').then(projects => {
-      console.log('projects:', projects)
       this.setState({
         projects,
       })
     })
     request('/list?module=befautyProjectCase&page=1&pageSize=100').then(cases => {
-      console.log('cases:', cases)
       this.setState({
          cases,
        })

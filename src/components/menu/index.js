@@ -14,7 +14,13 @@ export default class Nav extends Component {
       current: e.key,
     });
   }
-
+  componentDidMount() {
+    const path = window.location.pathname.substring(1);
+    console.log(path);
+    this.setState({
+      current: path,
+    })
+  }
   render () {
     return <div className="nav-bar">
       <Menu
@@ -32,16 +38,16 @@ export default class Nav extends Component {
         <Menu.Item key="star-project">
           <Link to="/star-project">明星项目</Link>
         </Menu.Item>
-        <Menu.Item key="star-doctor">
+        <Menu.Item key="star-doctors">
           <Link to="/star-doctors">明星医师</Link>
         </Menu.Item>
-        <Menu.Item key="xuanhua-team-member">
+        <Menu.Item key="hx-team">
           <Link to="/hx-team">桦萱团队</Link>
         </Menu.Item>
-        <Menu.Item key="tech-train">
+        <Menu.Item key="tech-training">
           <Link to="/tech-training">技术培训</Link>
         </Menu.Item>
-        <Menu.Item key="attract-investment">
+        <Menu.Item key="join-us">
           <Link to="/join-us">招商加盟</Link>
         </Menu.Item>
         <Menu.Item key="contact-us">

@@ -29,8 +29,8 @@ export default class StarDoctor extends Component {
     return <div className="star-doctor">
       {starDoctorsArr.map((array, index) =>
         <div key={'wraper' + index} className="doctors">
-          {array.map(item => <div className="doctor-info">
-            <img key={item.id} alt="" src={item.image} />
+          {array.map((item, key) => <div className="doctor-info">
+            <img key={item.id + key}alt="" src={item.image} />
             {item.title}
           </div>)}
         </div>

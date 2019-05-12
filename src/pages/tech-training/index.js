@@ -20,7 +20,8 @@ export default class TechTrainings extends Component {
   render () {
     const { TechTrainings } = this.state;
     return <div className="tech-training">
-    {TechTrainings.map(item => <TechTraining
+    {TechTrainings.map((item, index) => <TechTraining
+        key={index}
         title={item.title}
         icon={item.icon}
         img={item.image}

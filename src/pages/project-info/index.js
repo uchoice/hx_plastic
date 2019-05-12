@@ -8,7 +8,6 @@ export default class ProjectInfo extends Component {
   }
   componentDidMount() {
     const { location: { query: { id }}} = this.props;
-    console.log(id);
     this.getProjectInfo(id);
   }
 

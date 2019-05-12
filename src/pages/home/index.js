@@ -14,6 +14,7 @@ export default class Home extends Component {
     navImages: [],
     classicProjects: [],
     environments: [],
+    storeInfo: [],
   }
   getCaourselImage = () => {
     request('/list?module=beautyCarouselImage&page=1&pageSize=20').then(res => {
@@ -38,11 +39,13 @@ export default class Home extends Component {
     })
   }
 
-/*   getStoreInfo = () => {
+  getStoreInfo = () => {
     request('/list?module=beautyStore&page=1&pageSize=120').then(res => {
-
+      this.setState({
+        storeInfo: res,
+       })
     })
-  } */
+  }
 
   componentDidMount() {
     this.getCaourselImage();
@@ -55,6 +58,7 @@ export default class Home extends Component {
       navImages,
       classicProjects,
       environments,
+      storeInfo,
     } = this.state;
     return (
       <div className="home">
@@ -65,7 +69,7 @@ export default class Home extends Component {
             <AboutCompany key="about-company" />
             <StarGroup key="star-group"/>
             <Environment key="environment"  infos={environments}/>
-            <StoreInfo key="store-info"/>
+            <StoreInfo key="store-info" storeInfo={storeInfo}/>
           </QueueAnim>
         </div>
       </div>

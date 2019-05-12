@@ -1,7 +1,12 @@
+import QueueAnim from 'rc-queue-anim';
+import { OverPack } from 'rc-scroll-anim';
+
 export default function ({infos}) {
   return <div className="environment">
-    <h1 className="title">医院环境</h1>
-    <div className="content">
+  <OverPack playScale={0.05}>
+    <QueueAnim delay={600}>
+    <h1 key="enviroment" className="title">医院环境</h1>
+    <div key="enviroment-content" className="content">
       {
         infos.map((info, key) =>
           <div
@@ -14,5 +19,7 @@ export default function ({infos}) {
         )
       }
     </div>
+    </QueueAnim>
+    </OverPack>
   </div>
 }

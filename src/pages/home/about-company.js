@@ -8,14 +8,14 @@ export default class AboutCompany extends Component {
     this.videoRef = React.createRef();
   }
   state ={
-    controls: ''
+    controls: 'controls'
   }
   clickVideo = () => {
-    this.setState({
+   /*  this.setState({
       controls: 'controls'
     }, () => {
       this.videoRef.current.play()
-    })
+    }) */
   }
   render () {
     const { controls } = this.state;
@@ -26,7 +26,7 @@ export default class AboutCompany extends Component {
           className="about-company-video"
           loop
           ref={this.videoRef}
-          poster={!controls ? VIDEO_COVER : ''}
+          poster={VIDEO_COVER}
           controls={controls}
         >
           <source src={ADVERTISE_VIDEO} type="video/mp4" />
