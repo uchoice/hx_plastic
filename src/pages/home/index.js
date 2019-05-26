@@ -18,7 +18,7 @@ export default class Home extends Component {
   }
   getCaourselImage = () => {
     request('/list?module=beautyCarouselImage&page=1&pageSize=20').then(res => {
-      const navImages = res ? res.map(item => item.image) : []
+      const navImages = res || []
       this.setState({navImages})
     })
   }
@@ -51,7 +51,7 @@ export default class Home extends Component {
     this.getCaourselImage();
     this.getClassicProjects();
     this.getEnvironments();
-    /* this.getStoreInfo(); */
+    this.getStoreInfo();
   }
   render () {
     const {

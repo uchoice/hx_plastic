@@ -7,7 +7,7 @@ import Link from 'umi/link';
 
 export default class Nav extends Component {
   state = {
-    current: 'home',
+    current: '',
   }
   handleClick = (e) => {
     this.setState({
@@ -16,7 +16,6 @@ export default class Nav extends Component {
   }
   componentDidMount() {
     const path = window.location.pathname.substring(1);
-    console.log(path);
     this.setState({
       current: path,
     })

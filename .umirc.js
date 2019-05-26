@@ -3,6 +3,8 @@
 export default {
   exportStatic: {},
   treeShaking: true,
+  outputPath: './dist/hx-plastic',
+  publicPath: '', //http://yntt.oss-cn-hangzhou.aliyuncs.com/static/backend/1.0.0/
   disableCSSModules: true,
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html

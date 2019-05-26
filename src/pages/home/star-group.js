@@ -6,16 +6,16 @@ import { OverPack } from 'rc-scroll-anim';
 
 export default class StarGroup extends Component {
   state = {
-    left: -20,
+    left: 0,
     needTransition: true,
     starDoctors: []
   }
   init = () => {
     request('/list?module=beautyStarDoctor&page=1&pageSize=120').then(res => {
       const doctors = res ? res.map(item => item.image) : []
-      const starDoctors = doctors.concat(doctors).concat(doctors);
+      const starDoctors = doctors/* .concat(doctors).concat(doctors); */
     this.setState({
-      left: -20 * doctors.length,
+      /* left: -20 * doctors.length, */
       starDoctors
     })
     })
@@ -27,29 +27,7 @@ export default class StarGroup extends Component {
     const { left, starDoctors } = this.state;
     let caculateLeft = left;
     caculateLeft = left + 20 * flag
-    if (left === 0 && flag ===  1) {
-      this.setState({
-        left: caculateLeft
-      }, () => {
-        this.setState( ()=> {
-          this.setState({
-            needTransition: false,
-            left: -20 *( starDoctors.length / 3)
-          })
-        })
-      })
-    } else if (left === -200 && flag === -1) {
-      this.setState({
-        left: caculateLeft
-      }, () => {
-        this.setState( ()=> {
-          this.setState({
-            needTransition: false,
-            left: -20 * (starDoctors.length / 3)
-          })
-        })
-      })
-    } else {
+    if (!(left === 0 && flag ===  1 || left === -(starDoctors.length - 5) * 20 && flag === -1)) {
       this.setState({
         needTransition: true,
         left: caculateLeft

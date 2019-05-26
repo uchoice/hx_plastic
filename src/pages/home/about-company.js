@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import BlockTitle from '@/components/block-title';
 const VIDEO_COVER = require('@/assets/img/video_cover.png');
-const ADVERTISE_VIDEO = require('@/assets/video/video.mp4');
 export default class AboutCompany extends Component {
   constructor(props) {
     super(props);
@@ -9,13 +8,6 @@ export default class AboutCompany extends Component {
   }
   state ={
     controls: 'controls'
-  }
-  clickVideo = () => {
-   /*  this.setState({
-      controls: 'controls'
-    }, () => {
-      this.videoRef.current.play()
-    }) */
   }
   render () {
     const { controls } = this.state;
@@ -29,7 +21,7 @@ export default class AboutCompany extends Component {
           poster={VIDEO_COVER}
           controls={controls}
         >
-          <source src={ADVERTISE_VIDEO} type="video/mp4" />
+          <source src="http://hsuanmr.oss-cn-hangzhou.aliyuncs.com/hsuanmr_video.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="text-wrapper">
