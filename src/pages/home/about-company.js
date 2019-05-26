@@ -21,7 +21,7 @@ export default class AboutCompany extends Component {
           poster={VIDEO_COVER}
           controls={controls}
         >
-          <source src="http://hsuanmr.oss-cn-hangzhou.aliyuncs.com/hsuanmr_video.mp4" type="video/mp4" />
+          <source src="http://uford-hsuanmr.oss-cn-hangzhou.aliyuncs.com/hsuanmr_video.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="text-wrapper">

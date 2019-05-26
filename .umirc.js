@@ -1,10 +1,11 @@
 
 // ref: https://umijs.org/config/
 export default {
-  exportStatic: {},
+  exportStatic: false,
   treeShaking: true,
+  history: 'hash',
   outputPath: './dist/hx-plastic',
-  publicPath: '', //http://yntt.oss-cn-hangzhou.aliyuncs.com/static/backend/1.0.0/
+  publicPath: 'http://uford-hsuanmr.oss-cn-hangzhou.aliyuncs.com/static/front/1.0.3/', //http://yntt.oss-cn-hangzhou.aliyuncs.com/static/backend/1.0.0/
   disableCSSModules: true,
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html

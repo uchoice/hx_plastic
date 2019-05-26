@@ -15,7 +15,7 @@ export default class Nav extends Component {
     });
   }
   componentDidMount() {
-    const path = window.location.pathname.substring(1);
+    const path = window.location.hash.substring(2);
     this.setState({
       current: path,
     })
