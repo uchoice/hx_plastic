@@ -7,7 +7,6 @@ import { OverPack } from 'rc-scroll-anim';
 export default class StarGroup extends Component {
   state = {
     left: 0,
-    needTransition: true,
     starDoctors: []
   }
   init = () => {
@@ -29,13 +28,12 @@ export default class StarGroup extends Component {
     caculateLeft = left + 20 * flag
     if (!(left === 0 && flag ===  1 || left === -(starDoctors.length - 5) * 20 && flag === -1)) {
       this.setState({
-        needTransition: true,
         left: caculateLeft
       })
     }
   }
   render() {
-    const { left, needTransition, starDoctors } = this.state;
+    const { left, starDoctors } = this.state;
     return <div className="star-group">
       <OverPack playScale={0.05}>
         <QueueAnim delay={600}>
@@ -46,7 +44,7 @@ export default class StarGroup extends Component {
           <div key="star-group-content" className="doctors-wrapper">
             <span className="icon huaxuan huaxuaniconprevious" onClick={() => this.caculateDistance(1)}/>
               <div className="shelter">
-                <ul style={{transition:needTransition ? 'all 1s ease' : '', transform: `translate(${left}%)`}}>
+                <ul style={{transition:'all 1s ease', transform: `translate(${left}%)`}}>
                   {
                     starDoctors.map((doctor, index) => <li key={`doctor-${index}`}><img alt="" src={doctor} /></li>)
                   }

@@ -9,8 +9,12 @@
 
         @media screen and (max-width: 1661px) {
           .image-wrapper {
-            width: 340px;
+            flex: 1 0 400px;
+            border-radius: 6px;
             max-height: none !important;
+            img {
+              width: 100%;
+            }
           }
           &:nth-child(2n) {
             margin-left: 0;
@@ -19,7 +23,10 @@
 
         .image-wrapper {
             border-radius: 6px;
-            width: 240px;
+            flex: 1 0 400px;
+            img {
+              width: 100%;
+            }
         }
 
         .intro-wrapper {

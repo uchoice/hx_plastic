@@ -22,7 +22,7 @@ export default class ProjectInfo extends Component {
     const { res } = this.state;
     const createMarkup = () => ({ __html: res.content });
     return <div className="project-info">
-        <h1 className="title">{res.title}</h1>
+        {res.module !== 'beautyCarouselImage' && <h1 className="title">{res.title}</h1>}
         <div className="content" dangerouslySetInnerHTML={ createMarkup() } />
       </div>
   }

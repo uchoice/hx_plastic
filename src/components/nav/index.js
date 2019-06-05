@@ -4,12 +4,17 @@ import './index.less';
 import router from 'umi/router';
 import 'rc-banner-anim/assets/index.css';
 
+const { Thumb } = BannerAnim;
+
 export default class Nav extends Component{
   gotoDetail = (id) => {
     router.push(`/project-info?id=${id}`)
   }
   render () {
     const { imgs } = this.props
+    const thumbChildren = imgs.map((img, i) =>
+          <span key={i}>{i+1}</span>
+    );
     return <div className="nav-wrapper">
       <BannerAnim
         prefixCls="nav"
@@ -27,6 +32,10 @@ export default class Nav extends Component{
           }}
         />
         )}
+        <Thumb prefixCls="user-thumb" key="thumb"
+        >
+          {thumbChildren}
+        </Thumb>
       </BannerAnim>
     </div>
   }
